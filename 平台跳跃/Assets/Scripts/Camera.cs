@@ -5,11 +5,14 @@ using UnityEngine;
 public class Camera : MonoBehaviour
 {
     public GameObject player;
-
+    public float speed = 0.2f;
+    private void Start()
+    {
+        //transform.SetPositionAndRotation(new Vector3(0, 0, transform.position.z), Quaternion.identity);
+    }
     // Update is called once per frame
     void Update()
     {
-        Vector3 vector3 = new Vector3((int)(player.transform.position.x / 8) * 8, (int)(player.transform.position.y / 5) * 5, -10);
-        transform.SetPositionAndRotation(vector3  , Quaternion.identity);
+        transform.SetPositionAndRotation(transform.position + new Vector3(0, speed, 0), Quaternion.identity);
     }
 }

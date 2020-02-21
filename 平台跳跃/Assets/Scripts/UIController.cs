@@ -15,10 +15,6 @@ public class UIController : MonoBehaviour
         scoreText.text = "score:" + player.GetComponent<PlayerStatus>().score;
         lifeText.text = "lives:" + player.GetComponent<PlayerStatus>().blood;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
+    
 }
