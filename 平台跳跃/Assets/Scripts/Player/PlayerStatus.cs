@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
+    public GameObject gameManager;
+
     public int blood = 5;
     public int score = 0;
     private bool isLive = true;
+
     public int carry = 0;
     public List<GameObject> awards = new List<GameObject>();
+
     public GameObject UI;
+
     public bool super = false;
     public bool hurting = false;
     public int hurtingTime = 100;
     private int timer = 0;
+
+    //finish
     private void Update()
     {
         if (hurting)
@@ -28,7 +35,7 @@ public class PlayerStatus : MonoBehaviour
             {
                 if (blood == 0)
                 {
-                    Destroy(gameObject);
+                    gameManager.GetComponent<GameManager>().Restart();
                 }
                 else
                 {
@@ -76,5 +83,9 @@ public class PlayerStatus : MonoBehaviour
         super = false;
 
     }
-
+    public IEnumerator EnterTheDoor()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
+    }
 }

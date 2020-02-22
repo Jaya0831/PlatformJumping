@@ -48,14 +48,6 @@ public class Frog : Enemy
     // Update is called once per frame
     void Update()
     {
-        //if (GetComponent<Transform>().position.y<low_y)
-        //{
-        //    GetComponent<Rigidbody2D>().gravityScale = 0;
-        //}
-        //else
-        //{
-        //    GetComponent<Rigidbody2D>().gravityScale = 5;
-        //}
         GetComponent<Animator>().SetBool("isEnter", isEnter);
         if (isEnter)
         {

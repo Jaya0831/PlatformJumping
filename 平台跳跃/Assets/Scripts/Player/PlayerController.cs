@@ -35,7 +35,7 @@ public class PlayerController : Move
     {
         playerCollider = GetComponent<Collider2D>();
         playerRigidbody = GetComponent<Rigidbody2D>();
-        //transform.SetPositionAndRotation(new Vector3(4, 0, transform.position.z), Quaternion.identity);
+        transform.SetPositionAndRotation(new Vector3(4, 0, transform.position.z), Quaternion.identity);
 
     }
     void Update()
@@ -70,14 +70,12 @@ public class PlayerController : Move
                 playerRigidbody.gravityScale = 0;
                 if (Physics2D.Raycast(transform.position, Vector2.right, 0.3f, 1 << LayerMask.NameToLayer("wall")))
                 {
-                    Debug.Log("1");
                     transform.rotation = Quaternion.Euler(0, 0, 0);
                     GetComponent<Rigidbody2D>().AddForce(new Vector2(dragToTheWall, 0), ForceMode2D.Impulse);
 
                 }
                 else if(Physics2D.Raycast(transform.position, Vector2.left, 0.3f, 1 << LayerMask.NameToLayer("wall")))
                 {
-                    Debug.Log("2");
                     transform.rotation = Quaternion.Euler(0, -180, 0);
                     GetComponent<Rigidbody2D>().AddForce(new Vector2(-dragToTheWall, 0),ForceMode2D.Impulse);
                 }

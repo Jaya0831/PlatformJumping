@@ -19,6 +19,7 @@ public class MovingStage : MonoBehaviour
     {
         if (switch_.GetComponent<Switch>().isOn == true)
         {
+            GetComponent<Rigidbody2D>().constraints = ~RigidbodyConstraints2D.FreezePositionY;
             timer++;
             if (timer>round)
             {
@@ -33,6 +34,10 @@ public class MovingStage : MonoBehaviour
             {
                 GetComponent<Rigidbody2D>().MovePosition(new Vector2(startPosition.x, startPosition.y - v * timer));
             }
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
         }
     }
 }
