@@ -40,7 +40,7 @@ public class PlayerController : Move
     }
     void Update()
     {
-        onground = Physics2D.Raycast(transform.position, Vector2.down, 1f, 1 << LayerMask.NameToLayer("ground"));
+        onground = Physics2D.Raycast(new Vector2(transform.position.x, transform.position.y - 0.55f), Vector2.down, 0.1f, 1 << LayerMask.NameToLayer("ground"));
         //move&jump
         moveDir.x = Input.GetAxis("Horizontal");
         //moveDir.y = Input.GetAxis("Jump");
@@ -201,6 +201,6 @@ public class PlayerController : Move
         Gizmos.color = new Color(1, 0, 0);
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x - line, transform.position.y, 0));
         Gizmos.DrawLine(transform.position, new Vector3(transform.position.x + line, transform.position.y, 0));
-        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y + line, 0));
+        Gizmos.DrawLine(transform.position, new Vector3(transform.position.x, transform.position.y - line, 0));
     }
 }

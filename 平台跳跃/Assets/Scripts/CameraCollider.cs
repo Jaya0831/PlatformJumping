@@ -16,9 +16,9 @@ public class CameraCollider : MonoBehaviour
     {
         GetComponent<Transform>().SetPositionAndRotation(new Vector3(transform.position.x, myCamera.transform.position.y - 4.5f, transform.position.z), Quaternion.identity);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.tag!="Player")
+        if (collision.gameObject.tag != "Player")
         {
             Destroy(collision.gameObject);
         }
