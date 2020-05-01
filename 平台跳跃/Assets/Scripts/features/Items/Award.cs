@@ -41,8 +41,8 @@ public class Award : MonoBehaviour
             }
             move = timer / 100f;
 
-            Vector2 vector2 = new Vector2(player.transform.position.x + number, player.transform.position.y + move - 0.3f);
-            transform.SetPositionAndRotation(vector2, Quaternion.identity);
+            Vector3 vector3 = new Vector3(player.transform.position.x + number, player.transform.position.y + move - 0.3f, -3);
+            transform.SetPositionAndRotation(vector3, Quaternion.identity);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

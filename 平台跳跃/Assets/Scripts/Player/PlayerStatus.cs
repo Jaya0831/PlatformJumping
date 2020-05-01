@@ -6,7 +6,7 @@ public class PlayerStatus : MonoBehaviour
 {
     public GameObject gameManager;
 
-    public int blood = 5;
+    public int blood = 3;
     public int score = 0;
     private bool isLive = true;
 
